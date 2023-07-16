@@ -1,0 +1,41 @@
+char    capital(char c)
+{
+        return (c);
+}
+
+char    decapital(char c)
+{
+        return (c);
+}
+
+char    *ft_strcapitalize(char *str)
+{       int i;
+        char aux;
+
+        i = 1;
+        if (str[0] >= 97 && str[0] <= 122)
+        {
+                capital(str[0]);
+        }
+
+        while (str[i] != '\0')
+        {
+                if (str[i]<= 90 && str[i] >= 65)
+                {
+                        decapital(str[1]);
+                }
+                if ((str[i] >= 91 && str[i] <= 95)
+                        || (str[i] >= 123 && str[i] <= 126)
+                        || (str[i] >= 34 && str[i] <= 43)
+                        || (str[i] == 32)
+                        || (str[i] == 64)
+                        || (str[i] >= 45 && str[i] <= 56)
+                        || (str[i] >= 60 && str[i] <= 62))
+                {
+                        aux = str[i + 1];
+                        str[i + 1] = capital(aux);
+                }
+                i++;
+        }
+        return (str);
+}
